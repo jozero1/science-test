@@ -11,11 +11,11 @@
 <body><header><div class="brand"><span>효소</span> 스튜디오 <small style="font-size:11px;font-weight:400;color:#88967b">ENZYME STUDIO</small></div><div class="badge">나의 탐구가 한 편의 카드 뉴스로</div></header>
 <main><div class="eyebrow">SCIENCE × STORYTELLING</div><h1>사진과 글로 완성하는 효소 이야기</h1><p class="intro">조사한 내용을 담고, 디자인을 고르고, 나만의 과학 카드 뉴스를 완성하세요.</p>
 <div class="layout"><section class="panel editor" aria-label="카드 뉴스 편집"><h2>01. 사진과 탐구 내용</h2><div><label for="title">카드 제목</label><input id="title" type="text" maxlength="120" placeholder="예: 락토프리 우유 속 효소의 비밀"></div><div class="upload" id="dropZone" tabindex="0" aria-label="이미지 업로드 영역. 파일을 놓거나 Ctrl+V로 붙여넣으세요"><label for="photo">사진 또는 그림 2~4장</label><input id="photo" type="file" multiple accept="image/png,image/jpeg,image/webp"><p class="small">여기에 파일을 끌어 놓거나 Ctrl+V (Mac: ⌘+V)로 캡처 이미지를 붙여넣으세요. PNG · JPG · WebP / 각 15MB 이하 / 최대 4장</p><div id="photoList" class="photo-list" aria-label="업로드 이미지 목록"></div><button id="removePhoto" style="margin-top:8px;font-size:11px">이미지 모두 지우기</button></div><div class="pair"><div><label for="studentId">학번 (필수)</label><input id="studentId" type="text" required pattern="[0-9]+" inputmode="numeric" maxlength="30" placeholder="예: 20103"></div><div><label for="studentName">이름 (필수)</label><input id="studentName" type="text" required maxlength="70" placeholder="예: 홍길동"></div></div><div><label for="case">활용 사례 (필수)</label><textarea id="case" required maxlength="1500" rows="3" placeholder="어떤 제품이나 기술에 효소가 이용되나요?"></textarea></div><div><label for="enzyme">효소의 이름 (필수)</label><textarea id="enzyme" required maxlength="1500" rows="3" placeholder="어떤 효소가 작용하나요?"></textarea></div><div><label for="reaction">어떤 반응을 촉매하는가 (필수)</label><textarea id="reaction" required maxlength="1500" rows="3" placeholder="기질과 생성물, 효소가 촉매하는 반응을 설명하세요."></textarea></div><div><label for="effect">활용 효과 (필수)</label><textarea id="effect" required maxlength="1500" rows="3" placeholder="효소를 사용하면 어떤 장점이 있나요?"></textarea></div><div><label for="extra">기타 내용 (선택)</label><textarea id="extra" maxlength="1500" rows="3" placeholder="추가 설명, 이미지 출처, 참고 자료 등을 적어 주세요."></textarea><p class="small">작성한 모든 내용을 카드에 반영합니다. 각 항목 최대 1,500자. 학번·이름과 필수 항목을 입력해야 PNG·PDF를 저장할 수 있습니다.</p></div>
-<div class="controls"><h2>02. 나의 디자인</h2><div style="margin-top:15px"><label for="template">디자인 템플릿</label><select id="template"><option value="botanic">보태니컬 · 초록 + 넓은 본문</option><option value="lab">사이언스 · 모눈 실험 노트</option><option value="editorial">매거진 · 따뜻한 색감 + 2단 본문</option><option value="polaroid">포토 노트 · 메모지 본문</option><option value="gallery">갤러리 · 여백이 있는 본문</option><option value="night">미드나이트 · 어두운 배경 + 본문 상자</option></select></div><div style="margin-top:15px"><label for="fontFamily">글꼴</label><select id="fontFamily"><option value="gothic">고딕 · 깔끔하고 선명하게</option><option value="serif">명조 · 차분한 책 느낌</option><option value="rounded">굴림 · 부드러운 인상</option><option value="classic">궁서 · 전통적인 글씨</option><option value="mono">고정폭 · 실험 노트 느낌</option></select><p class="small">기기에 설치된 글꼴을 사용하며, 없으면 같은 계열의 대체 글꼴로 표시됩니다.</p></div><div style="margin-top:15px"><label for="arrangement">사진 배치</label><select id="arrangement"><option value="auto">자동 · 2~3장 한 줄 / 4장 2×2</option><option value="row">모두 가로 한 줄</option><option value="grid">2열 격자</option></select></div><div style="margin-top:15px"><label for="photoStyle">사진 정렬 스타일</label><select id="photoStyle"><option value="straight">반듯하게 나란히</option><option value="tilted">살짝 기울인 포토 콜라주</option></select></div><div style="margin-top:15px"><label for="fontSize">학생 답변 글자 크기 <output id="fontValue">36</output> px</label><input class="range" id="fontSize" type="range" min="24" max="56" step="1" value="36"></div><div style="margin-top:15px"><label for="headingSize">항목 제목 글자 크기 <output id="headingValue">42</output> px</label><input class="range" id="headingSize" type="range" min="26" max="68" step="1" value="42"></div><div style="margin-top:12px"><label for="headingColor">항목 제목 색상</label><input class="color" id="headingColor" type="color" value="#367455"></div><div class="pair" style="margin-top:12px"><div><label for="accent">강조 색상</label><input class="color" id="accent" type="color" value="#367455"></div><div><label for="textColor">학생 답변 색상</label><input class="color" id="textColor" type="color" value="#24392c"></div></div><div style="margin-top:15px"><label for="photoSize">사진 전체 크기</label><select id="photoSize"><option value="compact">작게</option><option value="standard" selected>보통</option><option value="large">크게</option></select></div><p class="small">템플릿은 배경과 글 영역을, 사진 배치·정렬은 위 선택 항목으로 조절합니다. 사진은 원본 비율로 높이를 계산해 빈 상자 없이 배치합니다. 개별 사진 크기도 이미지 목록에서 조절할 수 있습니다. 원본 파일 자체의 여백은 유지됩니다.</p></div><button id="resetPositions">사진 자동 배치로 되돌리기</button><p class="small">사진 이동은 위쪽 사진 영역 안에서 가능합니다. 배치·정렬·전체 크기·템플릿을 바꾸면 수동 배치를 초기화합니다. 너비·높이를 따로 바꾸면 원본 비율이 달라질 수 있습니다.</p><button id="example">예시 데이터로 시작하기</button><p class="privacy">입력과 사진은 브라우저에서만 처리되며 서버에 전송되지 않습니다. 새로고침하면 작업이 사라지므로 완성 후 다운로드하세요.</p></section>
-<section aria-label="카드 뉴스 미리보기"><div class="previewhead"><div><h2>완성될 카드 뉴스</h2><p>입력하면 바로 반영됩니다. 사진을 드래그해 이동하세요. 오른쪽 ↔은 너비, 아래 ↕는 높이, 모서리 ⤡는 비율 유지 크기 조절입니다.</p></div><div class="toolbar"><button id="generate" class="primary">카드 뉴스 생성</button><button id="pdf">PDF 다운로드</button></div></div><p id="status" class="status" role="status" aria-live="polite"></p><div class="grid" id="cards"></div><p class="privacy">사진과 글을 한 장의 통합 카드로 저장합니다. PDF도 같은 구성을 유지합니다. 한글 글꼴 모양이 그대로 유지됩니다. 과학 내용과 이미지의 출처·정확성은 제출 전 직접 확인하세요.</p></section></div></main><footer>ENZYME STUDIO · 관찰에서 이야기까지</footer>
+<div class="controls"><h2>02. 나의 디자인</h2><div style="margin-top:15px"><label for="template">디자인 템플릿</label><select id="template"><option value="botanic">보태니컬 · 초록 + 넓은 본문</option><option value="lab">사이언스 · 모눈 실험 노트</option><option value="editorial">매거진 · 따뜻한 색감 + 2단 본문</option><option value="polaroid">포토 노트 · 메모지 본문</option><option value="gallery">갤러리 · 여백이 있는 본문</option><option value="night">미드나이트 · 어두운 배경 + 본문 상자</option></select></div><div style="margin-top:15px"><label for="fontFamily">글꼴</label><select id="fontFamily"><option value="gothic">고딕 · 깔끔하고 선명하게</option><option value="serif">명조 · 차분한 책 느낌</option><option value="rounded">굴림 · 부드러운 인상</option><option value="classic">궁서 · 전통적인 글씨</option><option value="mono">고정폭 · 실험 노트 느낌</option></select><p class="small">기기에 설치된 글꼴을 사용하며, 없으면 같은 계열의 대체 글꼴로 표시됩니다.</p></div><div style="margin-top:15px"><label for="arrangement">사진 배치</label><select id="arrangement"><option value="auto">자동 · 2~3장 한 줄 / 4장 2×2</option><option value="row">모두 가로 한 줄</option><option value="grid">2열 격자</option></select></div><div style="margin-top:15px"><label for="photoStyle">사진 정렬 스타일</label><select id="photoStyle"><option value="straight">반듯하게 나란히</option><option value="tilted">살짝 기울인 포토 콜라주</option></select></div><div style="margin-top:15px"><label for="fontSize">학생 답변 글자 크기 <output id="fontValue">36</output> px</label><input class="range" id="fontSize" type="range" min="24" max="56" step="1" value="36"></div><div style="margin-top:15px"><label for="headingSize">항목 제목 글자 크기 <output id="headingValue">42</output> px</label><input class="range" id="headingSize" type="range" min="26" max="68" step="1" value="42"></div><div style="margin-top:12px"><label for="headingColor">항목 제목 색상</label><input class="color" id="headingColor" type="color" value="#367455"></div><div class="pair" style="margin-top:12px"><div><label for="accent">강조 색상</label><input class="color" id="accent" type="color" value="#367455"></div><div><label for="textColor">학생 답변 색상</label><input class="color" id="textColor" type="color" value="#24392c"></div></div><div style="margin-top:15px"><label for="photoSize">사진 전체 크기</label><select id="photoSize"><option value="compact">작게</option><option value="standard" selected>보통</option><option value="large">크게</option></select></div><p class="small">템플릿은 배경과 글 영역을, 사진 배치·정렬은 위 선택 항목으로 조절합니다. 사진은 원본 비율로 높이를 계산해 빈 상자 없이 배치합니다. 개별 사진 크기도 이미지 목록에서 조절할 수 있습니다. 원본 파일 자체의 여백은 유지됩니다.</p></div><button id="resetPositions">사진 자동 배치로 되돌리기</button><p class="small">A4 세로 비율을 유지합니다. 사진은 제목 바로 아래부터 이동할 수 있고, 사진이 커지면 글이 자동 축소됩니다. 사진 각도는 이미지 목록에서 -180°~180°로 조절하세요. 배치·정렬·전체 크기·템플릿을 바꾸면 수동 배치를 초기화합니다. 너비·높이를 따로 바꾸면 원본 비율이 달라질 수 있습니다.</p><button id="example">예시 데이터로 시작하기</button><p class="privacy">입력과 사진은 브라우저에서만 처리되며 서버에 전송되지 않습니다. 새로고침하면 작업이 사라지므로 완성 후 다운로드하세요.</p></section>
+<section aria-label="카드 뉴스 미리보기"><div class="previewhead"><div><h2>완성될 카드 뉴스</h2><p>입력하면 바로 반영됩니다. 사진을 드래그해 이동하세요. 오른쪽 ↔은 너비, 아래 ↕는 높이, 모서리 ⤡는 비율 유지 크기 조절입니다.</p></div><div class="toolbar"><button id="generate" class="primary">카드 뉴스 생성</button><button id="pdf">PDF 다운로드</button></div></div><p id="fitNotice" class="small" aria-live="polite"></p><p id="status" class="status" role="status" aria-live="polite"></p><div class="grid" id="cards"></div><p class="privacy">사진과 글을 한 장의 통합 카드로 저장합니다. PDF도 같은 구성을 유지합니다. 한글 글꼴 모양이 그대로 유지됩니다. 과학 내용과 이미지의 출처·정확성은 제출 전 직접 확인하세요.</p></section></div></main><footer>ENZYME STUDIO · 관찰에서 이야기까지</footer>
 <script>
 'use strict';
-const $=id=>document.getElementById(id), W=1080, M=70;
+const $=id=>document.getElementById(id), W=1080, M=70, A4H=Math.round(1080*297/210);
 const palettes={botanic:{bg:'#f2f4e6',accent:'#367455',text:'#24392c',tag:'LIFE & ENZYMES'},lab:{bg:'#eef4fb',accent:'#3268b5',text:'#1d3556',tag:'SCIENCE NOTE'},editorial:{bg:'#fff1e6',accent:'#b45338',text:'#4e3029',tag:'EVERYDAY SCIENCE'},polaroid:{bg:'#f4eede',accent:'#9a6339',text:'#4c3e2d',tag:'FIELD NOTES'},gallery:{bg:'#f6f5f2',accent:'#655d88',text:'#333044',tag:'ENZYME GALLERY'},night:{bg:'#192c39',accent:'#83d9c2',text:'#f0f6f7',tag:'AFTER HOURS / SCIENCE'}};
 const fontStacks={gothic:'"Malgun Gothic","Apple SD Gothic Neo","Noto Sans CJK KR",sans-serif',serif:'"Batang","AppleMyungjo","Noto Serif CJK KR",serif',rounded:'"Gulim","Apple SD Gothic Neo","Noto Sans CJK KR",sans-serif',classic:'"Gungsuh","GungSeo","Noto Serif CJK KR",serif',mono:'"D2Coding","Nanum Gothic Coding","Noto Sans Mono CJK KR",monospace'};
 const requiredFields=[['studentId','학번'],['studentName','이름'],['case','활용 사례'],['enzyme','효소의 이름'],['reaction','어떤 반응을 촉매하는가'],['effect','활용 효과']];
@@ -25,7 +25,7 @@ function validateExport(){
 }
 function exportName(){return $('studentId').value.trim()+'_'+$('studentName').value.trim().replace(/[\\/:*?"<>|\x00-\x1f]/g,'_').replace(/[. ]+$/g,'_');}
 function combinedContent(){return [['case','활용 사례'],['enzyme','효소의 이름'],['reaction','어떤 반응을 촉매하는가'],['effect','활용 효과'],['extra','기타 내용']].filter(([id])=>$(id).value.trim()).map(([id,label])=>label+'\n'+$(id).value).join('\n\n');}
-let photos=[],photoVersion=0,renderTimer=null,canvases=[],uploadQueue=Promise.resolve(),renderedCard=null,dragState=null,resizeFrames=[];
+let photos=[],photoVersion=0,renderTimer=null,canvases=[],uploadQueue=Promise.resolve(),renderedCard=null,dragState=null,resizeFrames=[],photoRegionLimit=900;
 function message(text,error=false){$('status').textContent=text;$('status').className='status'+(error?' error':'');}
 function wrapText(ctx,text,width){
  const lines=[];
@@ -55,8 +55,8 @@ function photoLayout(count,kind,scale){
   const n=Math.min(columns,count-first),available=width-gap*(n-1),base=available/n;
   const row=[];
   for(let j=0;j<n;j++){
-   const i=first+j,image=photos[i]?.image,ratio=image?image.height/image.width:2/3,zoom=photos[i]?.zoom||1,angle=tilted?(i%2?3:-3)*Math.PI/180:0;
-   const w=base*scale*zoom,h=w*ratio,bw=w*Math.cos(angle)+h*Math.abs(Math.sin(angle)),bh=h*Math.cos(angle)+w*Math.abs(Math.sin(angle));
+   const i=first+j,image=photos[i]?.image,ratio=image?image.height/image.width:2/3,zoom=photos[i]?.zoom||1,angle=photos[i]?.rotation!==undefined?photos[i].rotation*Math.PI/180:tilted?(i%2?3:-3)*Math.PI/180:0;
+   const w=base*scale*zoom,h=w*ratio,bw=w*Math.abs(Math.cos(angle))+h*Math.abs(Math.sin(angle)),bh=h*Math.abs(Math.cos(angle))+w*Math.abs(Math.sin(angle));
    row.push({w,h,bw,bh,angle});
   }
   const fit=Math.min(1,available/row.reduce((sum,b)=>sum+b.bw,0));
@@ -65,48 +65,58 @@ function photoLayout(count,kind,scale){
   for(const b of row){const w=b.w*fit,h=b.h*fit,bw=b.bw*fit,bh=b.bh*fit;boxes.push({x:x+(bw-w)/2,y:rowY+(bh-h)/2,w,h,angle:b.angle,bounds:{x,y:rowY,w:bw,h:bh}});x+=bw+gap;}
   rowY+=rowHeight+gap;
  }
+ const autoHeight=Math.max(...boxes.map(b=>b.bounds.y+b.bounds.h)),shrink=Math.min(1,photoRegionLimit/autoHeight);
+ if(shrink<1)for(const b of boxes){b.w*=shrink;b.h*=shrink;b.x=width/2+(b.x-width/2)*shrink;b.y*=shrink;b.bounds={x:width/2+(b.bounds.x-width/2)*shrink,y:b.bounds.y*shrink,w:b.bounds.w*shrink,h:b.bounds.h*shrink};}
  const result=boxes.map((box,i)=>photos[i]?.manual?manualPhotoBox(photos[i].manual,box.angle):box);
- return {boxes:result,height:Math.max(rowY-gap,...result.map(b=>b.bounds.y+b.bounds.h))};
+ return {boxes:result,height:Math.max(...result.map(b=>b.bounds.y+b.bounds.h))};
 }
 function manualPhotoBox(manual,angle){
  let w=Math.max(24,manual.w),h=Math.max(24,Math.min(5000,manual.h));
- const c=Math.cos(angle),s=Math.abs(Math.sin(angle));
- const fit=Math.min(1,(W-2*M)/(w*c+h*s));w*=fit;h*=fit;
+ const c=Math.abs(Math.cos(angle)),s=Math.abs(Math.sin(angle));
+ const fit=Math.min(1,(W-2*M)/(w*c+h*s),photoRegionLimit/(h*c+w*s));w*=fit;h*=fit;
  const bw=w*c+h*s,bh=h*c+w*s;
- const x=Math.min(W-2*M-(bw+w)/2,Math.max((bw-w)/2,manual.x)),y=Math.max((bh-h)/2,manual.y);
+ const x=Math.min(W-2*M-(bw+w)/2,Math.max((bw-w)/2,manual.x)),y=Math.min(photoRegionLimit-(bh+h)/2,Math.max((bh-h)/2,manual.y));
  return {x,y,w,h,angle,bounds:{x:x+(w-bw)/2,y:y+(h-bh)/2,w:bw,h:bh}};
 }
-function resetPositions(){photos.forEach(photo=>delete photo.manual);render();}
+function resetPositions(){photos.forEach(photo=>{delete photo.manual;delete photo.rotation;});render();refreshPhotos();}
 function contentSections(){return [['case','활용 사례'],['enzyme','효소의 이름'],['reaction','어떤 반응을 촉매하는가'],['effect','활용 효과'],['extra','기타 내용']].filter(([id])=>$(id).value.trim()).map(([id,label])=>({label,text:$(id).value}));}
 function buildCard(index,canvas){
  const kind=$('template').value,theme=palettes[kind],size=Number($('fontSize').value),headingSize=Number($('headingSize').value)||42,scale={compact:.6,standard:.8,large:1}[$('photoSize').value]||1;
  const ctx=canvas.getContext('2d'),font=fontStacks[$('fontFamily').value]||fontStacks.gothic;
  const text=combinedContent(),body=text||'아직 입력한 내용이 없습니다.',title=$('title').value||'생활 속 효소 이야기',twoColumns=kind==='editorial';
- const bodyWidth=twoColumns?(W-2*M-40)/2:W-2*M-40,lineHeight=size*1.7,headingLineHeight=headingSize*1.5;
- const sections=contentSections(),blocks=[],columnHeights=[0,0],split=Math.ceil(sections.length/2);
- for(let i=0;i<sections.length;i++){
-  const section=sections[i];ctx.font='bold '+headingSize+'px '+font;const headingLines=wrapText(ctx,section.label,bodyWidth);ctx.font=size+'px '+font;const bodyLines=wrapText(ctx,section.text,bodyWidth);
-  const column=twoColumns&&i>=split?1:0,height=headingLines.length*headingLineHeight+12+bodyLines.length*lineHeight;
-  blocks.push({...section,headingLines,bodyLines,column,offset:columnHeights[column],height});columnHeights[column]+=height+36;
+ const bodyWidth=twoColumns?(W-2*M-40)/2:W-2*M-40,sections=contentSections(),split=Math.ceil(sections.length/2),H=A4H;
+ let titleSize=58,titleLines;
+ do{ctx.font='bold '+titleSize+'px '+font;titleLines=wrapText(ctx,title,W-2*M);if(titleLines.length<=2)break;titleSize-=2;}while(titleSize>18);
+ const titleLineHeight=titleSize*1.3,headerBottom=190+(titleLines.length-1)*titleLineHeight+24;
+ photoRegionLimit=Math.max(100,H-headerBottom-400);
+ const layout=photoLayout(Math.max(1,photos.length),kind,scale),bodyTop=headerBottom+layout.height+36,availableHeight=H-110-bodyTop;
+ function measureTextBlocks(factor){
+  const actualSize=size*factor,actualHeading=headingSize*factor,lineHeight=actualSize*1.6,headingLineHeight=actualHeading*1.4,gap=28*factor,padding=10*factor,blocks=[],columnHeights=[0,0];
+  for(let i=0;i<sections.length;i++){
+   const section=sections[i];ctx.font='bold '+actualHeading+'px '+font;const headingLines=wrapText(ctx,section.label,bodyWidth);ctx.font=actualSize+'px '+font;const bodyLines=wrapText(ctx,section.text,bodyWidth);
+   const column=twoColumns&&i>=split?1:0,height=headingLines.length*headingLineHeight+padding+bodyLines.length*lineHeight;
+   blocks.push({...section,headingLines,bodyLines,column,offset:columnHeights[column],height});columnHeights[column]+=height+gap;
+  }
+  return {blocks,bodyHeight:Math.max(0,...columnHeights.map(h=>Math.max(0,h-gap))),actualSize,actualHeading,lineHeight,headingLineHeight,padding};
  }
- const bodyHeight=Math.max(0,...columnHeights.map(h=>Math.max(0,h-36))),lines=blocks.flatMap(b=>[...b.headingLines,...b.bodyLines]);
- ctx.font='bold 58px '+font;const titleLines=wrapText(ctx,title,W-2*M),headerBottom=160+titleLines.length*78+85;
- const layout=photoLayout(Math.max(1,photos.length),kind,scale),bodyTop=headerBottom+layout.height+70,H=Math.ceil(Math.max(1350,bodyTop+bodyHeight+160));
+ let measured=measureTextBlocks(1),fit=1;
+ if(measured.bodyHeight>availableHeight){let low=0.001,high=1;for(let i=0;i<20;i++){const mid=(low+high)/2;if(measureTextBlocks(mid).bodyHeight<=availableHeight)low=mid;else high=mid;}fit=low;measured=measureTextBlocks(fit);}
+ const {blocks,bodyHeight,actualSize,actualHeading,lineHeight,headingLineHeight,padding}=measured,lines=blocks.flatMap(b=>[...b.headingLines,...b.bodyLines]);
  canvas.width=W;canvas.height=H;ctx.fillStyle=theme.bg;ctx.fillRect(0,0,W,H);
  if(kind==='lab'){ctx.strokeStyle='#dae6f5';ctx.lineWidth=1;for(let x=0;x<W;x+=60){ctx.beginPath();ctx.moveTo(x,0);ctx.lineTo(x,H);ctx.stroke();}for(let y=0;y<H;y+=60){ctx.beginPath();ctx.moveTo(0,y);ctx.lineTo(W,y);ctx.stroke();}}
  if(kind==='polaroid'){ctx.fillStyle='#e7deca';for(let y=40;y<H;y+=80)ctx.fillRect(0,y,W,2);}
  ctx.fillStyle=$('accent').value;ctx.fillRect(M,60,60,7);ctx.font='bold 21px sans-serif';ctx.fillText(theme.tag,M,112);
- ctx.fillStyle=$('textColor').value;ctx.font='bold 58px '+font;titleLines.forEach((line,i)=>ctx.fillText(line,M,178+i*78));
- ctx.font='24px '+font;ctx.fillText([$('studentId').value.trim(),$('studentName').value.trim()].filter(Boolean).join(' · '),M,headerBottom-30);
+ ctx.fillStyle=$('textColor').value;ctx.font='bold '+titleSize+'px '+font;titleLines.forEach((line,i)=>ctx.fillText(line,M,178+i*titleLineHeight));
+ ctx.font='22px '+font;ctx.textAlign='right';ctx.fillText([$('studentId').value.trim(),$('studentName').value.trim()].filter(Boolean).join(' · '),W-M,112);ctx.textAlign='left';
  layout.boxes.forEach((box,i)=>{const x=M+box.x,y=headerBottom+box.y;ctx.save();ctx.translate(x+box.w/2,y+box.h/2);ctx.rotate(box.angle);drawPhoto(ctx,photos[i]?.image,-box.w/2,-box.h/2,box.w,box.h);ctx.restore();});
  if(kind==='night'||kind==='polaroid'){ctx.fillStyle=kind==='night'?'#233c4b':'#fffaf0';ctx.fillRect(M,bodyTop-24,W-2*M,bodyHeight+48);}
  ctx.textBaseline='top';
- for(const block of blocks){const x=M+20+block.column*(bodyWidth+40),y=bodyTop+block.offset;ctx.font='bold '+headingSize+'px '+font;ctx.fillStyle=$('headingColor').value;block.headingLines.forEach((line,i)=>ctx.fillText(line,x,y+i*headingLineHeight));ctx.font=size+'px '+font;ctx.fillStyle=$('textColor').value;block.bodyLines.forEach((line,i)=>ctx.fillText(line,x,y+block.headingLines.length*headingLineHeight+12+i*lineHeight));}
+ for(const block of blocks){const x=M+20+block.column*(bodyWidth+40),y=bodyTop+block.offset;ctx.font='bold '+actualHeading+'px '+font;ctx.fillStyle=$('headingColor').value;block.headingLines.forEach((line,i)=>ctx.fillText(line,x,y+i*headingLineHeight));ctx.font=actualSize+'px '+font;ctx.fillStyle=$('textColor').value;block.bodyLines.forEach((line,i)=>ctx.fillText(line,x,y+block.headingLines.length*headingLineHeight+padding+i*lineHeight));}
  ctx.textBaseline='alphabetic';
  ctx.fillStyle=$('accent').value;ctx.fillRect(M,H-83,W-2*M,2);ctx.font='20px sans-serif';ctx.fillText('ENZYME EXPLORATION',M,H-40);ctx.textAlign='right';ctx.fillText('PHOTO + STORY',W-M,H-40);ctx.textAlign='left';
- canvas.setAttribute('aria-label',title+': '+body);return {lines,H,text,layout,bodyTop,bodyHeight,blocks,headerBottom};
+ canvas.setAttribute('aria-label',title+': '+body);return {lines,H,text,layout,bodyTop,bodyHeight,blocks,headerBottom,actualSize,actualHeading,fit,availableHeight};
 }
-function render(){clearTimeout(renderTimer);$('fontValue').textContent=$('fontSize').value;$('headingValue').textContent=$('headingSize').value;try{renderedCard=buildCard(0,canvases[0]);syncResizeHandles();}catch(e){message('카드를 그리지 못했습니다. 글이나 이미지 크기를 줄여 주세요.',true);throw e;}}
+function render(){clearTimeout(renderTimer);$('fontValue').textContent=$('fontSize').value;$('headingValue').textContent=$('headingSize').value;try{renderedCard=buildCard(0,canvases[0]);syncResizeHandles();$('fitNotice').textContent='A4 세로 · 실제 답변 '+renderedCard.actualSize.toFixed(1)+'px / 항목 제목 '+renderedCard.actualHeading.toFixed(1)+'px'+(renderedCard.fit<.999?' · 남은 공간에 맞춰 자동 축소했습니다.':'')+(renderedCard.actualSize<18?' 글이 작습니다. 사진을 줄이거나 내용을 간결하게 정리하면 읽기 쉬워집니다.':'');}catch(e){message('카드를 그리지 못했습니다. 글이나 이미지 크기를 줄여 주세요.',true);throw e;}}
 function clampZoom(value){return Math.min(1.8,Math.max(.5,value));}
 function startResize(e,index,edge,handle){
  if(dragState||e.button!==undefined&&e.button!==0)return;
@@ -115,23 +125,23 @@ function startResize(e,index,edge,handle){
  // Freeze the current automatic layout so editing one photo does not move others.
  photos.forEach((p,i)=>{const b=renderedCard.layout.boxes[i];p.manual={x:b.x,y:b.y,w:b.w,h:b.h};});
  handle.setPointerCapture(e.pointerId);
- dragState={photo,index,edge,handle,pointerId:e.pointerId,x:e.clientX,y:e.clientY,start:{...photo.manual},zoom:photo.zoom||1,angle:box.angle,regionHeight:renderedCard.layout.height,scale:canvasStage.getBoundingClientRect().width/W};
+ dragState={photo,index,edge,handle,pointerId:e.pointerId,x:e.clientX,y:e.clientY,start:{...photo.manual},zoom:photo.zoom||1,angle:box.angle,regionHeight:photoRegionLimit,scale:canvasStage.getBoundingClientRect().width/W};
  handle.classList.add('active');
 }
 function editPhoto(state,dx,dy){
  const start=state.start,c=Math.cos(state.angle),s=Math.sin(state.angle),width=W-2*M;
  if(state.edge==='move'){
-  const bw=start.w*c+start.h*Math.abs(s),bh=start.h*c+start.w*Math.abs(s);
+  const bw=start.w*Math.abs(c)+start.h*Math.abs(s),bh=start.h*Math.abs(c)+start.w*Math.abs(s);
   const bx=start.x+(start.w-bw)/2,by=start.y+(start.h-bh)/2;
   return {...start,x:Math.min(width-bw,Math.max(0,bx+dx))+(bw-start.w)/2,y:Math.min(Math.max(0,state.regionHeight-bh),Math.max(0,by+dy))+(bh-start.h)/2};
  }
  const localX=dx*c+dy*s,localY=-dx*s+dy*c;
  let w=start.w,h=start.h;
- if(state.edge==='right')w=Math.max(24,Math.min(start.w+localX,(width-h*Math.abs(s))/c));
- if(state.edge==='bottom'){h=Math.max(24,Math.min(5000,start.h+localY));if(Math.abs(s)>0)h=Math.min(h,(width-w*c)/Math.abs(s));}
+ if(state.edge==='right')w=Math.max(24,Math.min(start.w+localX,(width-h*Math.abs(s))/Math.max(.000001,Math.abs(c))));
+ if(state.edge==='bottom'){h=Math.max(24,Math.min(5000,start.h+localY));if(Math.abs(s)>0)h=Math.min(h,(width-w*Math.abs(c))/Math.abs(s));}
  if(state.edge==='corner'){
   const factor=Math.max(24/start.w,24/start.h,(start.w*(start.w+localX)+start.h*(start.h+localY))/(start.w*start.w+start.h*start.h));
-  const fit=Math.min(factor,width/(start.w*c+start.h*Math.abs(s)),5000/start.h);
+  const fit=Math.min(factor,width/(start.w*Math.abs(c)+start.h*Math.abs(s)),5000/start.h);
   w=start.w*fit;h=start.h*fit;
  }
  // Keep the photo's rotated top-left corner anchored during size edits.
@@ -159,7 +169,7 @@ function syncResizeHandles(){
      if(!['ArrowUp','ArrowDown','ArrowLeft','ArrowRight'].includes(e.key))return;e.preventDefault();
      const b=renderedCard.layout.boxes[i];photos.forEach((p,j)=>{const box=renderedCard.layout.boxes[j];p.manual={x:box.x,y:box.y,w:box.w,h:box.h};});
      const dx={ArrowLeft:-10,ArrowRight:10}[e.key]||0,dy={ArrowUp:-10,ArrowDown:10}[e.key]||0;
-     photos[i].manual=editPhoto({start:{...photos[i].manual},edge,angle:b.angle,regionHeight:renderedCard.layout.height},edge==='bottom'?0:dx,edge==='right'?0:dy);render();refreshPhotos();
+     photos[i].manual=editPhoto({start:{...photos[i].manual},edge,angle:b.angle,regionHeight:photoRegionLimit},edge==='bottom'?0:dx,edge==='right'?0:dy);render();refreshPhotos();
     });frame.append(handle);
    }resizeLayer.appendChild(frame);resizeFrames.push(frame);
   });
@@ -176,14 +186,14 @@ function makePDF(images){
  const add=v=>{const bytes=typeof v==='string'?encode(v):v;chunks.push(bytes);length+=bytes.length;};
  const obj=(n,parts)=>{offsets[n]=length;add(n+' 0 obj\n');for(const p of parts)add(p);add('\nendobj\n');};
  add('%PDF-1.4\n% enzyme cards\n');obj(1,['<< /Type /Catalog /Pages 2 0 R >>']);obj(2,['<< /Type /Pages /Count '+images.length+' /Kids ['+images.map((_,i)=>(3+i*3)+' 0 R').join(' ')+'] >>']);
- images.forEach((image,i)=>{const n=3+i*3,w=540,h=image.height/2,commands='q\n'+w+' 0 0 '+h+' 0 0 cm\n/Im0 Do\nQ\n';obj(n,['<< /Type /Page /Parent 2 0 R /MediaBox [0 0 '+w+' '+h+'] /Resources << /XObject << /Im0 '+(n+1)+' 0 R >> >> /Contents '+(n+2)+' 0 R >>']);obj(n+1,['<< /Type /XObject /Subtype /Image /Width '+image.width+' /Height '+image.height+' /ColorSpace /DeviceRGB /BitsPerComponent 8 /Filter /DCTDecode /Length '+image.bytes.length+' >>\nstream\n',image.bytes,'\nendstream']);obj(n+2,['<< /Length '+encode(commands).length+' >>\nstream\n'+commands+'endstream']);});
+ images.forEach((image,i)=>{const n=3+i*3,w=595.275590551,h=841.88976378,commands='q\n'+w+' 0 0 '+h+' 0 0 cm\n/Im0 Do\nQ\n';obj(n,['<< /Type /Page /Parent 2 0 R /MediaBox [0 0 '+w+' '+h+'] /Resources << /XObject << /Im0 '+(n+1)+' 0 R >> >> /Contents '+(n+2)+' 0 R >>']);obj(n+1,['<< /Type /XObject /Subtype /Image /Width '+image.width+' /Height '+image.height+' /ColorSpace /DeviceRGB /BitsPerComponent 8 /Filter /DCTDecode /Length '+image.bytes.length+' >>\nstream\n',image.bytes,'\nendstream']);obj(n+2,['<< /Length '+encode(commands).length+' >>\nstream\n'+commands+'endstream']);});
  const xref=length;add('xref\n0 '+offsets.length+'\n0000000000 65535 f \n');for(let i=1;i<offsets.length;i++)add(String(offsets[i]).padStart(10,'0')+' 00000 n \n');add('trailer\n<< /Size '+offsets.length+' /Root 1 0 R >>\nstartxref\n'+xref+'\n%%EOF');return new Blob(chunks,{type:'application/pdf'});
 }
 async function savePDF(){const button=$('pdf');button.disabled=true;try{await uploadQueue;if(!validateExport())return;render();message('통합 카드를 PDF로 준비하고 있습니다…');const images=canvases.map(canvas=>{const base64=canvas.toDataURL('image/jpeg',0.94).split(',')[1],binary=atob(base64);return {width:canvas.width,height:canvas.height,bytes:Uint8Array.from(binary,c=>c.charCodeAt(0))};});download(makePDF(images),exportName()+'.pdf');message('사진과 글이 담긴 PDF를 저장했습니다.');}catch(e){message('PDF 저장에 실패했습니다. 글이나 이미지 크기를 줄인 뒤 다시 시도하세요.',true);}finally{button.disabled=false;}}
 function refreshPhotos(){
  const list=$('photoList');list.replaceChildren();
  photos.forEach((photo,i)=>{const row=document.createElement('div'),img=document.createElement('img'),name=document.createElement('span');row.className='photo-item';img.src=photo.image.toDataURL('image/png');img.alt='업로드 이미지 '+(i+1);name.textContent=(i+1)+'. '+photo.name;row.append(img,name);
- for(const [label,action,disabled] of [['↑',()=>{[photos[i-1],photos[i]]=[photos[i],photos[i-1]];},i===0],['↓',()=>{[photos[i],photos[i+1]]=[photos[i+1],photos[i]];},i===photos.length-1],['삭제',()=>photos.splice(i,1),false]]){const button=document.createElement('button');button.textContent=label;button.disabled=disabled;button.setAttribute('aria-label',(i+1)+'번 이미지 '+({'↑':'앞으로','↓':'뒤로','삭제':'삭제'}[label]));button.onclick=()=>{action();refreshPhotos();render();};row.append(button);}const sizeLabel=document.createElement('label'),sizeInput=document.createElement('input'),sizeValue=document.createElement('output');sizeLabel.className='photo-zoom';sizeLabel.textContent='사진 크기 ';sizeInput.type='range';sizeInput.min='50';sizeInput.max='180';sizeInput.step='5';sizeInput.value=String(Math.round((photo.zoom||1)*100));sizeInput.setAttribute('aria-label',(i+1)+'번 사진 크기');sizeValue.textContent=sizeInput.value+'%';sizeInput.addEventListener('input',()=>{const zoom=Number(sizeInput.value)/100;if(photo.manual){const factor=zoom/(photo.zoom||1);photo.manual.w*=factor;photo.manual.h*=factor;}photo.zoom=zoom;sizeValue.textContent=sizeInput.value+'%';render();});sizeLabel.append(sizeInput,sizeValue);row.append(sizeLabel);list.appendChild(row);});
+ for(const [label,action,disabled] of [['↑',()=>{[photos[i-1],photos[i]]=[photos[i],photos[i-1]];},i===0],['↓',()=>{[photos[i],photos[i+1]]=[photos[i+1],photos[i]];},i===photos.length-1],['삭제',()=>photos.splice(i,1),false]]){const button=document.createElement('button');button.textContent=label;button.disabled=disabled;button.setAttribute('aria-label',(i+1)+'번 이미지 '+({'↑':'앞으로','↓':'뒤로','삭제':'삭제'}[label]));button.onclick=()=>{action();refreshPhotos();render();};row.append(button);}const sizeLabel=document.createElement('label'),sizeInput=document.createElement('input'),sizeValue=document.createElement('output');sizeLabel.className='photo-zoom';sizeLabel.textContent='사진 크기 ';sizeInput.type='range';sizeInput.min='50';sizeInput.max='180';sizeInput.step='5';sizeInput.value=String(Math.round((photo.zoom||1)*100));sizeInput.setAttribute('aria-label',(i+1)+'번 사진 크기');sizeValue.textContent=sizeInput.value+'%';sizeInput.addEventListener('input',()=>{const zoom=Number(sizeInput.value)/100;if(photo.manual){const factor=zoom/(photo.zoom||1);photo.manual.w*=factor;photo.manual.h*=factor;}photo.zoom=zoom;sizeValue.textContent=sizeInput.value+'%';render();});sizeLabel.append(sizeInput,sizeValue);row.append(sizeLabel);const angleLabel=document.createElement('label'),angleInput=document.createElement('input'),angleValue=document.createElement('output');angleLabel.className='photo-zoom';angleLabel.textContent='회전 각도 ';angleInput.type='range';angleInput.min='-180';angleInput.max='180';angleInput.step='1';angleInput.value=String(photo.rotation??($('photoStyle').value==='tilted'?(i%2?3:-3):0));angleValue.textContent=angleInput.value+'°';angleInput.setAttribute('aria-label',(i+1)+'번 사진 회전 각도');angleInput.addEventListener('input',()=>{if(!photo.manual){const b=renderedCard.layout.boxes[i];photo.manual={x:b.x,y:b.y,w:b.w,h:b.h};}photo.rotation=Number(angleInput.value);angleValue.textContent=photo.rotation+'°';render();});angleLabel.append(angleInput,angleValue);row.append(angleLabel);list.appendChild(row);});
 }
 async function decodePhoto(file){
  if(!['image/png','image/jpeg','image/webp'].includes(file.type))throw Error('PNG, JPG 또는 WebP 이미지만 넣을 수 있습니다.');
