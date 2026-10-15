@@ -1,0 +1,89 @@
+<!doctype html>
+<html lang="ko">
+<head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><title>효소 스튜디오 · 탐구 카드 뉴스</title>
+<style>
+:root{font-family:"Noto Sans KR","Malgun Gothic","Apple SD Gothic Neo",system-ui,sans-serif;color:#20332b;background:#f4f5ef}*{box-sizing:border-box}body{margin:0}header{padding:22px max(20px,calc((100% - 1380px)/2));background:#fff;border-bottom:1px solid #dce2d7;display:flex;justify-content:space-between;align-items:center;gap:15px}.brand{font-weight:800;font-size:22px;letter-spacing:-1px}.brand span{color:#367b56}.badge{font-size:12px;color:#72826d}main{max-width:1420px;padding:32px 20px;margin:auto}.eyebrow{font-size:11px;font-weight:800;letter-spacing:2px;color:#69835b}h1{font-size:32px;margin:9px 0;letter-spacing:-1px}.intro{color:#798574;font-size:14px;line-height:1.8;margin:0 0 27px}.layout{display:grid;grid-template-columns:360px minmax(0,1fr);gap:25px;align-items:start}.panel{background:white;border:1px solid #dce3d6;border-radius:16px;padding:23px}.editor{display:grid;gap:17px}h2{font-size:17px;margin:0 0 4px}label{font-size:13px;font-weight:650;display:block;margin-bottom:7px}textarea,input,select,button{font:inherit}textarea,input[type=text],select{width:100%;border:1px solid #cbd5c3;border-radius:9px;padding:10px;background:#fff;color:#263b2b}textarea{resize:vertical;line-height:1.7;min-height:85px;font-size:13px}button{border:1px solid #cad6c2;border-radius:9px;background:white;padding:10px 14px;color:#355639;cursor:pointer}button:hover{background:#eef4e7}button:disabled{cursor:wait;opacity:.6}button:focus-visible,input:focus-visible,select:focus-visible,textarea:focus-visible{outline:3px solid #b3ca79;outline-offset:2px}.primary{background:#315c3f;color:#fff;border-color:#315c3f}.primary:hover{background:#254a32}.small{font-size:11px;color:#829079;line-height:1.7;margin:6px 0 0}.controls{border-top:1px solid #e2e7dd;padding-top:18px}.pair{display:grid;grid-template-columns:1fr 1fr;gap:12px}.color{width:100%;height:38px;border:1px solid #ccd7c2;background:white;border-radius:8px;padding:3px}.range{width:100%;accent-color:#467147}.upload{padding:13px;border:1px dashed #b5c6a9;border-radius:10px;background:#f8faf4}input[type=file]{max-width:100%;font-size:12px}.previewhead{display:flex;gap:15px;justify-content:space-between;align-items:center;margin-bottom:18px}.previewhead p{font-size:12px;color:#809076;margin:8px 0 0}.toolbar{display:flex;gap:8px;flex-wrap:wrap}.grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:20px}figure{margin:0;min-width:0}canvas{display:block;width:100%;height:auto;border-radius:12px;box-shadow:0 8px 25px #273f2010;background:white}figcaption{display:flex;justify-content:space-between;align-items:center;gap:8px;padding-top:12px;font-size:12px;color:#718068}figcaption button{font-size:12px;padding:7px 10px}.status{margin:16px 0;padding:12px;border-radius:9px;background:#e8efdf;font-size:12px;line-height:1.7;overflow-wrap:anywhere}.status:empty{display:none}.status.error{color:#9a3e32;background:#fff0eb}.privacy{margin-top:20px;font-size:11px;color:#839079;line-height:1.8}.sr-only{position:absolute;width:1px;height:1px;overflow:hidden;clip-path:inset(50%)}footer{text-align:center;padding:28px;font-size:11px;color:#8a967f}@media(max-width:950px){.layout{grid-template-columns:300px minmax(0,1fr)}.grid{grid-template-columns:1fr}.previewhead{align-items:start;flex-direction:column}}@media(max-width:660px){header{padding:17px}.badge{display:none}main{padding:25px 16px}h1{font-size:26px}.layout{grid-template-columns:1fr}.grid{grid-template-columns:1fr}.panel{padding:18px}.toolbar{width:100%}.toolbar button{flex:1}canvas{max-width:500px;margin:auto}}
+</style></head>
+<body><header><div class="brand"><span>효소</span> 스튜디오 <small style="font-size:11px;font-weight:400;color:#88967b">ENZYME STUDIO</small></div><div class="badge">나의 탐구가 한 편의 카드 뉴스로</div></header>
+<main><div class="eyebrow">SCIENCE × STORYTELLING</div><h1>생활 속 효소, 네 장의 이야기</h1><p class="intro">조사한 내용을 담고, 디자인을 고르고, 나만의 과학 카드 뉴스를 완성하세요.</p>
+<div class="layout"><section class="panel editor" aria-label="카드 뉴스 편집"><h2>01. 탐구 내용 입력</h2><div><label for="case">활용 사례</label><textarea id="case" maxlength="2000" placeholder="어떤 제품이나 기술에 효소가 이용되나요?"></textarea></div><div><label for="enzyme">효소의 이름</label><textarea id="enzyme" maxlength="2000" placeholder="어떤 효소가 작용하나요?"></textarea></div><div><label for="reaction">기질과 반응</label><textarea id="reaction" maxlength="2000" placeholder="어떤 물질에 작용하여 어떤 변화가 일어나나요?"></textarea></div><div><label for="effect">활용 효과</label><textarea id="effect" maxlength="2000" placeholder="이 효소를 사용하면 어떤 장점이 있나요?"></textarea><p class="small">입력 내용은 요약하거나 바꾸지 않습니다. 각 항목 최대 2,000자.</p></div><div class="upload"><label for="photo">사진 또는 그림</label><input id="photo" type="file" accept="image/png,image/jpeg,image/webp"><p class="small">PNG · JPG · WebP / 최대 15MB · 직접 촬영하거나 이용 허락을 받은 이미지를 사용하세요.</p><button id="removePhoto" style="margin-top:8px;font-size:11px">이미지 지우기</button></div>
+<div class="controls"><h2>02. 나의 디자인</h2><div style="margin-top:15px"><label for="template">디자인 템플릿</label><select id="template"><option value="botanic">보태니컬 · 자연의 초록</option><option value="lab">사이언스 · 실험실의 파랑</option><option value="editorial">에디토리얼 · 따뜻한 매거진</option></select></div><div style="margin-top:15px"><label for="fontSize">본문 글자 크기 <output id="fontValue">36</output> px</label><input class="range" id="fontSize" type="range" min="24" max="56" step="1" value="36"></div><div class="pair" style="margin-top:12px"><div><label for="accent">강조 색상</label><input class="color" id="accent" type="color" value="#367455"></div><div><label for="textColor">글자 색상</label><input class="color" id="textColor" type="color" value="#24392c"></div></div><div style="margin-top:15px"><label for="position">사진 위치</label><select id="position"><option value="top">위쪽</option><option value="bottom">아래쪽</option><option value="left">왼쪽</option><option value="right">오른쪽</option></select></div><p class="small">사진은 비율을 유지하며 전체가 보이게 배치합니다. 긴 글은 카드 높이를 늘려 모두 표시합니다.</p></div><button id="example">예시 데이터로 시작하기</button><p class="privacy">입력과 사진은 브라우저에서만 처리되며 서버에 전송되지 않습니다. 새로고침하면 작업이 사라지므로 완성 후 다운로드하세요.</p></section>
+<section aria-label="카드 뉴스 미리보기"><div class="previewhead"><div><h2>완성될 카드 뉴스</h2><p>입력하거나 디자인을 바꾸면 바로 반영됩니다.</p></div><div class="toolbar"><button id="generate" class="primary">카드 뉴스 생성</button><button id="pdf">4장 PDF 다운로드</button></div></div><p id="status" class="status" role="status" aria-live="polite"></p><div class="grid" id="cards"></div><p class="privacy">PDF는 현재 카드 네 장을 이미지로 담아 저장합니다. 한글 글꼴 모양이 그대로 유지됩니다. 과학 내용과 이미지의 출처·정확성은 제출 전 직접 확인하세요.</p></section></div></main><footer>ENZYME STUDIO · 관찰에서 이야기까지</footer>
+<script>
+'use strict';
+const $=id=>document.getElementById(id), W=1080, M=70;
+const palettes={botanic:{bg:'#f2f4e6',accent:'#367455',text:'#24392c',tag:'LIFE & ENZYMES'},lab:{bg:'#eef4fb',accent:'#3268b5',text:'#1d3556',tag:'SCIENCE NOTE'},editorial:{bg:'#fff1e6',accent:'#b45338',text:'#4e3029',tag:'EVERYDAY SCIENCE'}};
+const titles=['생활 속 효소 이야기','이 효소를 소개합니다','기질은 어떻게 변할까요?','효소가 만드는 차이'];
+const keys=['case','enzyme','reaction','effect'];
+let photo=null,photoVersion=0,renderTimer=null,canvases=[];
+function message(text,error=false){$('status').textContent=text;$('status').className='status'+(error?' error':'');}
+function wrapText(ctx,text,width){
+ const lines=[];
+ for(const paragraph of text.replace(/\r\n?/g,'\n').split('\n')){
+  let line='';
+  for(const char of Array.from(paragraph)){
+   if(line&&ctx.measureText(line+char).width>width){lines.push(line);line=char;}else line+=char;
+  }
+  lines.push(line);
+ }
+ return lines;
+}
+function artwork(ctx,x,y,w,h){
+ ctx.fillStyle='#e0e9d5';ctx.fillRect(x,y,w,h);ctx.save();ctx.translate(x+w/2,y+h/2);const r=Math.min(w,h)*.23;
+ ctx.strokeStyle='#7e9e69';ctx.lineWidth=5;for(let i=0;i<6;i++){const a=i*Math.PI/3;ctx.beginPath();ctx.moveTo(0,0);ctx.lineTo(Math.cos(a)*r*1.6,Math.sin(a)*r*1.6);ctx.stroke();ctx.beginPath();ctx.arc(Math.cos(a)*r*1.6,Math.sin(a)*r*1.6,r*.32,0,Math.PI*2);ctx.fillStyle='#b2c89a';ctx.fill();}
+ ctx.fillStyle='#4b7857';ctx.beginPath();ctx.arc(0,0,r,0,Math.PI*2);ctx.fill();ctx.fillStyle='#eff5e6';ctx.font='bold '+Math.max(18,r*.6)+'px sans-serif';ctx.textAlign='center';ctx.textBaseline='middle';ctx.fillText('E',0,2);ctx.restore();
+}
+function drawPhoto(ctx,x,y,w,h){
+ ctx.fillStyle='#ffffff';ctx.fillRect(x,y,w,h);
+ if(!photo){artwork(ctx,x,y,w,h);return;}
+ const ratio=Math.min(w/photo.width,h/photo.height),dw=photo.width*ratio,dh=photo.height*ratio;ctx.drawImage(photo,x+(w-dw)/2,y+(h-dh)/2,dw,dh);
+}
+function buildCard(index,canvas){
+ const theme=palettes[$('template').value],size=Number($('fontSize').value),position=$('position').value,side=position==='left'||position==='right';
+ const ctx=canvas.getContext('2d');ctx.font=size+'px "Malgun Gothic","Apple SD Gothic Neo","Noto Sans CJK KR",sans-serif';
+ const text=$(keys[index]).value;const body=text||'아직 입력한 내용이 없습니다.';
+ const bodyWidth=side?510:W-2*M,lines=wrapText(ctx,body,bodyWidth),lineHeight=size*1.7,bodyHeight=lines.length*lineHeight;
+ const titleSize=index===0?62:50;ctx.font='bold '+titleSize+'px "Malgun Gothic","Noto Sans CJK KR",sans-serif';const titleLines=wrapText(ctx,titles[index],W-2*M);
+ const headerBottom=150+titleLines.length*titleSize*1.35+35;
+ const imageHeight=side?Math.max(440,bodyHeight):390;
+ const contentHeight=side?Math.max(imageHeight,bodyHeight):imageHeight+46+bodyHeight;
+ const H=Math.ceil(Math.max(1350,headerBottom+contentHeight+145));canvas.width=W;canvas.height=H;
+ ctx.fillStyle=theme.bg;ctx.fillRect(0,0,W,H);
+ if($('template').value==='lab'){ctx.strokeStyle='#d8e4f3';ctx.lineWidth=1;for(let x=0;x<W;x+=60){ctx.beginPath();ctx.moveTo(x,0);ctx.lineTo(x,H);ctx.stroke();}for(let y=0;y<H;y+=60){ctx.beginPath();ctx.moveTo(0,y);ctx.lineTo(W,y);ctx.stroke();}}
+ ctx.fillStyle=$('accent').value;ctx.fillRect(M,60,50,7);ctx.font='bold 21px sans-serif';ctx.fillText(theme.tag,M,112);ctx.textAlign='right';ctx.fillText('0'+(index+1)+' / 04',W-M,112);ctx.textAlign='left';
+ ctx.fillStyle=$('textColor').value;ctx.font='bold '+titleSize+'px "Malgun Gothic","Apple SD Gothic Neo","Noto Sans CJK KR",sans-serif';titleLines.forEach((line,i)=>ctx.fillText(line,M,180+i*titleSize*1.35));
+ let tx=M,ty=headerBottom;
+ if(side){const ix=position==='left'?M:W-M-360;drawPhoto(ctx,ix,headerBottom,360,imageHeight);tx=position==='left'?M+410:M;}else if(position==='top'){drawPhoto(ctx,M,headerBottom,W-2*M,imageHeight);ty+=imageHeight+46;}else drawPhoto(ctx,M,headerBottom+bodyHeight+46,W-2*M,imageHeight);
+ ctx.font=size+'px "Malgun Gothic","Apple SD Gothic Neo","Noto Sans CJK KR",sans-serif';ctx.fillStyle=$('textColor').value;ctx.textBaseline='top';lines.forEach((line,i)=>ctx.fillText(line,tx,ty+i*lineHeight));ctx.textBaseline='alphabetic';
+ ctx.fillStyle=$('accent').value;ctx.fillRect(M,H-83,W-2*M,2);ctx.font='20px sans-serif';ctx.fillText('ENZYME EXPLORATION',M,H-40);ctx.textAlign='right';ctx.fillText(['활용 사례','효소 소개','기질과 반응','활용 효과'][index],W-M,H-40);ctx.textAlign='left';
+ canvas.setAttribute('aria-label',titles[index]+': '+body);return {lines,H,text};
+}
+function render(){
+ clearTimeout(renderTimer);$('fontValue').textContent=$('fontSize').value;
+ try{for(let i=0;i<4;i++)buildCard(i,canvases[i]);}catch(e){message('카드를 그리지 못했습니다. 글의 길이나 이미지 크기를 줄여 다시 시도하세요.',true);throw e;}
+}
+function schedule(){clearTimeout(renderTimer);renderTimer=setTimeout(render,120);}
+function download(blob,name){const url=URL.createObjectURL(blob),a=document.createElement('a');a.href=url;a.download=name;document.body.appendChild(a);a.click();a.remove();setTimeout(()=>URL.revokeObjectURL(url),30000);}
+function pngBlob(canvas){return new Promise((resolve,reject)=>canvas.toBlob(blob=>blob?resolve(blob):reject(Error('이미지를 만들지 못했습니다.')),'image/png'));}
+async function savePNG(i){try{render();download(await pngBlob(canvases[i]),'효소카드_'+String(i+1).padStart(2,'0')+'.png');message((i+1)+'번 카드를 PNG로 저장했습니다.');}catch(e){message(e.message,true);}}
+// Rasterize Korean text before PDF export so no font download or embedding is needed.
+function makePDF(images){
+ const encode=s=>new TextEncoder().encode(s),chunks=[],offsets=[0];let length=0;
+ const add=v=>{const bytes=typeof v==='string'?encode(v):v;chunks.push(bytes);length+=bytes.length;};
+ const obj=(n,parts)=>{offsets[n]=length;add(n+' 0 obj\n');for(const p of parts)add(p);add('\nendobj\n');};
+ add('%PDF-1.4\n% enzyme cards\n');obj(1,['<< /Type /Catalog /Pages 2 0 R >>']);obj(2,['<< /Type /Pages /Count '+images.length+' /Kids ['+images.map((_,i)=>(3+i*3)+' 0 R').join(' ')+'] >>']);
+ images.forEach((image,i)=>{const n=3+i*3,w=540,h=image.height/2,commands='q\n'+w+' 0 0 '+h+' 0 0 cm\n/Im0 Do\nQ\n';obj(n,['<< /Type /Page /Parent 2 0 R /MediaBox [0 0 '+w+' '+h+'] /Resources << /XObject << /Im0 '+(n+1)+' 0 R >> >> /Contents '+(n+2)+' 0 R >>']);obj(n+1,['<< /Type /XObject /Subtype /Image /Width '+image.width+' /Height '+image.height+' /ColorSpace /DeviceRGB /BitsPerComponent 8 /Filter /DCTDecode /Length '+image.bytes.length+' >>\nstream\n',image.bytes,'\nendstream']);obj(n+2,['<< /Length '+encode(commands).length+' >>\nstream\n'+commands+'endstream']);});
+ const xref=length;add('xref\n0 '+offsets.length+'\n0000000000 65535 f \n');for(let i=1;i<offsets.length;i++)add(String(offsets[i]).padStart(10,'0')+' 00000 n \n');add('trailer\n<< /Size '+offsets.length+' /Root 1 0 R >>\nstartxref\n'+xref+'\n%%EOF');return new Blob(chunks,{type:'application/pdf'});
+}
+async function savePDF(){const button=$('pdf');button.disabled=true;try{render();message('네 장을 PDF로 준비하고 있습니다…');const images=canvases.map(canvas=>{const base64=canvas.toDataURL('image/jpeg',0.94).split(',')[1],binary=atob(base64);return {width:canvas.width,height:canvas.height,bytes:Uint8Array.from(binary,c=>c.charCodeAt(0))};});download(makePDF(images),'효소_탐구_카드뉴스.pdf');message('카드 네 장이 포함된 PDF를 저장했습니다.');}catch(e){message('PDF 저장에 실패했습니다. 글이나 이미지 크기를 줄인 뒤 다시 시도하세요.',true);}finally{button.disabled=false;}}
+async function loadPhoto(file){const version=++photoVersion;if(!file)return;try{if(!['image/png','image/jpeg','image/webp'].includes(file.type))throw Error('PNG, JPG 또는 WebP 이미지 파일을 선택해 주세요.');if(file.size>15*1024*1024)throw Error('15MB 이하 이미지를 선택해 주세요.');const url=URL.createObjectURL(file);try{const img=await new Promise((resolve,reject)=>{const img=new Image();img.onload=()=>resolve(img);img.onerror=()=>reject(Error('이미지를 읽을 수 없습니다. 다른 파일을 선택해 주세요.'));img.src=url;});if(img.width*img.height>40000000)throw Error('이미지 해상도가 너무 큽니다. 4천만 화소 이하로 줄여 주세요.');if(version!==photoVersion)return;photo=img;render();message('업로드한 이미지를 네 장에 적용했습니다.');}finally{URL.revokeObjectURL(url);}}catch(e){if(version===photoVersion)message(e.message,true);}finally{if(version===photoVersion)$('photo').value='';}}
+function example(){
+ $('case').value='우유 속 유당을 분해한 락토프리 우유';$('enzyme').value='락테이스(젖당 분해 효소)';$('reaction').value='기질: 유당(젖당)\n락테이스는 유당의 가수 분해를 촉진하여 포도당과 갈락토스로 분해한다.';$('effect').value='유당을 소화하기 어려운 사람이 우유를 섭취할 때 느끼는 불편을 줄이는 데 도움이 된다.\n효소의 작용 조건과 제품별 제조 방법을 함께 조사해 보자.';
+ photoVersion++;photo=null;render();message('예시를 불러왔습니다. 그림은 효소를 나타내는 장식 이미지입니다. 조사한 내용과 사진으로 바꿔 보세요.');
+}
+for(let i=0;i<4;i++){const figure=document.createElement('figure'),canvas=document.createElement('canvas'),caption=document.createElement('figcaption'),label=document.createElement('span'),button=document.createElement('button');canvas.setAttribute('role','img');label.textContent='0'+(i+1)+' · '+['표지','효소 소개','기질과 반응','활용 효과'][i];button.textContent=(i+1)+'장 PNG 다운로드';button.onclick=()=>savePNG(i);caption.append(label,button);figure.append(canvas,caption);$('cards').appendChild(figure);canvases.push(canvas);}
+for(const id of [...keys,'fontSize','accent','textColor','position'])$(id).addEventListener('input',schedule);
+$('template').addEventListener('change',()=>{const theme=palettes[$('template').value];$('accent').value=theme.accent;$('textColor').value=theme.text;render();});
+$('photo').addEventListener('change',e=>loadPhoto(e.target.files[0]));$('removePhoto').onclick=()=>{photoVersion++;photo=null;$('photo').value='';render();message('이미지를 지웠습니다. 장식 그림으로 표시합니다.');};$('example').onclick=example;$('generate').onclick=()=>{render();message('입력한 내용 그대로 네 장의 카드를 생성했습니다.');};$('pdf').onclick=savePDF;
+example();
+</script></body></html>
