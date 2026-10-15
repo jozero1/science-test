@@ -20,17 +20,19 @@
  .meta{gap:12px;font-size:9pt}.response{padding:16px;margin-top:16px;border-radius:10px;break-inside:auto}.response h2{font-size:12pt;break-after:avoid}
  #printStudent{margin:0;font-weight:600}#printAnswer{white-space:pre-wrap;overflow-wrap:anywhere;line-height:1.8;font-size:11pt;orphans:3;widows:3}
 }
+.print-blocked-message{display:none}#reportTiming.late{color:#b33020;font-weight:700}
+@media print{#shell.report-blocked>*{display:none!important}#shell.report-blocked>.print-blocked-message{display:block!important}#reportTiming{font-size:10pt;line-height:1.6}}
 </style>
 <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.8/dist/chart.umd.min.js"></script>
 </head>
 <body>
 <header><div class="brand"><span>∿</span>Science Lab<span style="background:none;color:#93a093;font-size:11px;font-weight:500">탐구의 시작, 데이터에서</span></div><div class="viewbuttons" aria-label="화면 보기 전환"><button id="desktop" aria-pressed="true">PC 보기</button><button id="mobile" aria-pressed="false">모바일 보기</button></div></header>
-<main class="shell" id="shell">
+<main class="shell" id="shell"><p class="print-blocked-message">학번과 이름을 모두 입력한 뒤 PDF 저장 버튼을 눌러 주세요.</p>
 <div class="intro"><div><div class="eyebrow">SCIENCE EXPLORATION DASHBOARD</div><h1>데이터로 발견하는 우리 교실의 과학</h1><p class="sub">사이언스큐브로 측정한 CO₂와 온도, 변화 속에 숨은 이야기를 찾아보세요.</p></div><span class="tag">● &nbsp; 브라우저에서 안전하게 분석</span></div>
 <section class="stats" aria-label="통계 요약"><article class="card"><div class="label"><i class="accent"></i>최대 CO₂ 농도</div><div class="value"><span id="max">—</span><span class="unit">ppm</span></div><small>측정 구간의 가장 높은 농도</small></article><article class="card"><div class="label"><i class="accent"></i>평균 CO₂ 농도</div><div class="value"><span id="avg">—</span><span class="unit">ppm</span></div><small>전체 측정값의 산술평균</small></article><article class="card"><div class="label"><i class="accent orange"></i>평균 온도</div><div class="value"><span id="temp">—</span><span class="unit">℃</span></div><small>전체 측정값의 산술평균</small></article></section>
 <div class="workspace"><section class="panel"><div class="panelhead"><div><h2>시간에 따른 측정값 변화</h2><p class="hint">범례를 눌러 계열을 숨기거나, 그래프에서 측정값을 확인하세요.</p></div><span class="tag" id="source">예시 데이터</span></div><div class="sampling"><label for="interval">샘플링 간격 (초)</label><input id="interval" type="number" min="0.001" step="any" value="5" inputmode="decimal" aria-describedby="samplingHelp samplingError"><input id="intervalSlider" type="range" min="1" max="3600" step="1" value="5" aria-label="샘플링 간격 슬라이더 (초)"><button id="original">원본 보기</button><small id="samplingHelp">첫 측정 시각부터 일정 간격으로 표시합니다. 없는 값은 선형 보간합니다. 슬라이더: 1–3,600초 · 직접 입력: 0.001초 이상</small><p id="samplingError" class="status error" role="status" aria-live="polite"></p></div><div class="chartbox"><canvas id="chart" role="img" aria-label="시간에 따른 CO₂ 농도와 온도 이중 Y축 그래프"></canvas><img id="printChart" class="print-only" alt="학생이 작성한 CO₂·온도 그래프"></div><p id="chartError" class="status error" role="alert"></p><div class="meta"><span>파일 <strong id="filename"></strong></span><span>측정값 <strong id="count"></strong></span><span>측정 구간 <strong id="range"></strong></span><span>그래프 표시 <strong id="plottedCount"></strong></span></div></section>
 <aside class="side"><section class="panel"><h2>나의 측정 데이터</h2><p class="hint">CSV 파일을 불러와 탐구를 시작하세요.</p><label class="upload" id="drop"><input id="file" type="file" accept=".csv,text/csv" aria-label="측정 CSV 파일 선택"><span class="uploadicon">↥</span><b>CSV 파일 선택하기</b><small>또는 파일을 여기에 끌어 놓으세요</small></label><div class="actions"><button id="sampleDownload">예시 CSV 다운로드</button><button id="reset">예시로 돌아가기</button></div><p id="status" class="status" role="status" aria-live="polite"></p><ol class="instructions"><li>1열: 시간(s)</li><li>2열: CO₂ 농도(ppm)</li><li>3열: 온도(℃)</li></ol><p class="privacy">⌑ &nbsp;파일은 서버에 업로드되지 않습니다.<br>모든 데이터는 이 브라우저에서만 처리됩니다.</p></section></aside></div>
-<section class="response panel"><h2><label for="answer">실험 결과로 알 수 있는 온도와 CO2사이의 관계는 무엇인가?</label></h2><div class="student"><label for="studentName">학번 / 이름 (선택)</label><input id="studentName" type="text" maxlength="100" placeholder="예: 10201 홍길동" autocomplete="off"><p id="printStudent" class="print-only"></p></div><textarea id="answer" rows="7" placeholder="그래프에서 관찰한 변화와 그 근거를 바탕으로 답을 작성하세요."></textarea><div id="printAnswer" class="print-only"></div><div class="report-actions"><p>작성한 답변과 현재 그래프를 PDF로 저장하여 제출하세요. 인쇄 창에서 ‘PDF로 저장’을 선택하세요.</p><button id="savePDF">결과물을 PDF로 저장하기</button></div><p id="reportStatus" class="status" role="status" aria-live="polite"></p></section><footer>SCIENCE LAB &nbsp;·&nbsp; 관찰하고, 질문하고, 발견하세요.</footer>
+<section class="response panel"><h2><label for="answer">실험 결과로 알 수 있는 온도와 CO2사이의 관계는 무엇인가?</label></h2><div class="student"><label for="studentId">학번 (필수)</label><input id="studentId" type="text" required pattern="[0-9]+" inputmode="numeric" maxlength="30" placeholder="예: 10201" autocomplete="off"><label for="studentName">이름 (필수)</label><input id="studentName" type="text" required maxlength="70" placeholder="예: 홍길동" autocomplete="off"><p id="printStudent" class="print-only"></p></div><textarea id="answer" rows="7" placeholder="그래프에서 관찰한 변화와 그 근거를 바탕으로 답을 작성하세요."></textarea><p id="reportTiming" class="print-only"></p><div id="printAnswer" class="print-only"></div><div class="report-actions"><p>작성한 답변과 현재 그래프를 PDF로 저장하여 제출하세요. 인쇄 창에서 ‘PDF로 저장’을 선택하세요. 파일명은 학번_이름.pdf로 저장하세요.</p><button id="savePDF">결과물을 PDF로 저장하기</button></div><p id="reportStatus" class="status" role="status" aria-live="polite"></p></section><footer>SCIENCE LAB &nbsp;·&nbsp; 관찰하고, 질문하고, 발견하세요.</footer>
 </main>
 <script>
 'use strict';
@@ -112,24 +114,47 @@ function changeInterval(value){
 $('interval').addEventListener('input',e=>{const value=e.target.value.trim()===''?NaN:Number(e.target.value);if(Number.isFinite(value))$('intervalSlider').value=String(value);changeInterval(value);});
 $('intervalSlider').addEventListener('input',e=>{$('interval').value=e.target.value;changeInterval(Number(e.target.value));});
 $('original').onclick=()=>changeInterval(null);
+const DEADLINE=Date.parse('2026-10-15T16:00:00+09:00');
+const originalTitle=document.title;
+function reportIdentity(){
+ const id=$('studentId').value.trim(),name=$('studentName').value.trim();
+ if(!/^[0-9]+$/.test(id))return {error:'학번을 숫자로 입력해 주세요.',field:'studentId'};
+ if(!name)return {error:'이름을 입력해 주세요.',field:'studentName'};
+ const safeName=name.replace(/[\\/:*?"<>|\x00-\x1f]/g,'_').replace(/[. ]+$/g,'_');
+ return {id,name,filename:id+'_'+safeName};
+}
+function deadlineStamp(now){
+ const parts=new Intl.DateTimeFormat('ko-KR',{timeZone:'Asia/Seoul',year:'numeric',month:'2-digit',day:'2-digit',hour:'2-digit',minute:'2-digit',second:'2-digit',hourCycle:'h23'}).formatToParts(now);
+ const part=type=>parts.find(p=>p.type===type).value;
+ return {late:now.getTime()>=DEADLINE,text:`PDF 저장 요청 시각 (한국 시간): ${part('year')}년 ${part('month')}월 ${part('day')}일 ${part('hour')}:${part('minute')}:${part('second')} · ${now.getTime()>=DEADLINE?'기한초과':'기한 내'} · 마감: 2026년 10월 15일 16:00`};
+}
 function prepareReport(){
- $('printStudent').textContent=$('studentName').value.trim()?'학번 / 이름: '+$('studentName').value.trim():'';
+ const identity=reportIdentity();
+ $('shell').classList.toggle('report-blocked',!!identity.error);
+ if(identity.error)return false;
+ document.title=identity.filename;
+ $('printStudent').textContent='학번: '+identity.id+' / 이름: '+identity.name;
  $('printAnswer').textContent=$('answer').value.trim()?$('answer').value:'(답변이 작성되지 않았습니다.)';
+ const stamp=deadlineStamp(new Date());
+ $('reportTiming').textContent=stamp.text;$('reportTiming').className='print-only'+(stamp.late?' late':'');
  if(chart)$('printChart').src=chart.toBase64Image();
+ return true;
 }
 $('savePDF').onclick=async()=>{
- const status=$('reportStatus');
+ const status=$('reportStatus'),identity=reportIdentity();
+ if(identity.error){status.className='status error';status.textContent=identity.error;$(identity.field).focus();return;}
  if(!chart){status.className='status error';status.textContent='그래프를 불러온 뒤 저장해 주세요. 인터넷 연결을 확인하고 새로고침하세요.';return;}
  const button=$('savePDF');button.disabled=true;
  try{
   prepareReport();
   if($('printChart').decode)await $('printChart').decode();
-  status.className='status info';status.textContent='인쇄 창에서 대상(프린터)을 ‘PDF로 저장’으로 선택해 저장하세요. 저장한 PDF를 과제 제출란에 업로드하면 그래프와 답변을 함께 확인할 수 있습니다.';
+  status.className='status info';status.textContent='인쇄 창에서 ‘PDF로 저장’을 선택하고, 파일명을 '+identity.filename+'.pdf로 저장하세요. 브라우저에 따라 파일명을 직접 입력해야 할 수 있습니다.';
   window.print();
- }catch(e){status.className='status error';status.textContent='인쇄 창을 열지 못했습니다. 브라우저의 인쇄 메뉴(Ctrl+P 또는 ⌘+P)를 이용해 주세요.';}
+ }catch(e){document.title=originalTitle;status.className='status error';status.textContent='인쇄 창을 열지 못했습니다. 브라우저의 인쇄 메뉴(Ctrl+P 또는 ⌘+P)를 이용해 주세요.';}
  finally{button.disabled=false;}
 };
 window.addEventListener('beforeprint',prepareReport);
+window.addEventListener('afterprint',()=>{document.title=originalTitle;});
 $('file').addEventListener('change' ,e=>loadFile(e.target.files[0]));
 for(const type of ['dragenter','dragover'])$('drop').addEventListener(type,e=>{e.preventDefault();$('drop').classList.add('drag');});
 for(const type of ['dragleave','drop'])$('drop').addEventListener(type,e=>{e.preventDefault();$('drop').classList.remove('drag');});
