@@ -1,0 +1,72 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Science Lab · CO₂ 탐구 대시보드</title>
+<style>
+:root{font-family:Inter,"Pretendard","Noto Sans KR",system-ui,sans-serif;color:#203329;background:#f3f6f3;font-synthesis:none}*{box-sizing:border-box}body{margin:0}button,.upload{font:inherit;cursor:pointer}button:focus-visible,a:focus-visible,.upload:focus-within{outline:3px solid #e5ae48;outline-offset:4px}button{border:1px solid #dce3dd;border-radius:9px;padding:10px 15px;background:white;color:inherit}button:hover{background:#eef3ee}header{background:#fff;border-bottom:1px solid #dfe6df;padding:20px max(24px,calc((100% - 1200px)/2));display:flex;align-items:center;justify-content:space-between;gap:15px}.brand{font-weight:800;letter-spacing:-.6px;font-size:21px}.brand span{background:#236947;color:white;padding:7px 10px;border-radius:10px;margin-right:10px}.topnote{font-size:12px;color:#78877e}.shell{max-width:1248px;margin:auto;padding:38px 24px 24px;transition:max-width .2s}.eyebrow{color:#367659;font-size:12px;font-weight:800;letter-spacing:2px}h1{font-size:32px;letter-spacing:-1.3px;margin:10px 0}p{line-height:1.7}.intro{display:flex;justify-content:space-between;align-items:center;gap:22px;margin-bottom:28px}.sub{color:#78847c;font-size:14px;margin:0}.tag{white-space:nowrap;background:#e7eee7;color:#52745b;font-size:12px;padding:8px 12px;border-radius:20px}.stats{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;margin-bottom:23px}.card,.panel{background:white;border:1px solid #dfe6df;border-radius:15px}.card{padding:23px 25px;position:relative}.label{font-size:13px;color:#6d7e72}.value{font-size:38px;font-weight:750;letter-spacing:-1.5px;margin-top:14px;font-variant-numeric:tabular-nums}.unit{font-size:14px;font-weight:500;color:#839087;letter-spacing:0;margin-left:7px}.accent{width:8px;height:8px;display:inline-block;border-radius:50%;background:#367a58;margin-right:6px}.orange{background:#d49248}.card small{display:block;color:#93a096;font-size:11px;margin-top:9px}.workspace{display:grid;grid-template-columns:minmax(0,1fr) 292px;gap:22px;align-items:start}.panel{padding:24px}.panelhead{display:flex;justify-content:space-between;align-items:start;gap:12px;margin-bottom:18px}h2{font-size:17px;margin:0 0 7px;letter-spacing:-.5px}.hint{font-size:12px;color:#8a968e;margin:0}.chartbox{height:360px;position:relative}.meta{display:flex;gap:20px;flex-wrap:wrap;padding-top:17px;margin-top:16px;border-top:1px solid #edf0ed;font-size:12px;color:#7b8c80}.meta strong{color:#3b5042;font-weight:600;overflow-wrap:anywhere}.side{display:grid;gap:18px}.upload{position:relative;display:block;text-align:center;border:1.5px dashed #b9cebd;border-radius:11px;background:#f8faf7;padding:25px 10px;margin-top:20px}.upload:hover,.upload.drag{background:#eaf3ea;border-color:#377c53}.upload input{position:absolute;width:100%;height:100%;inset:0;opacity:0;cursor:pointer}.upload b{display:block;font-size:13px;margin:10px 0 6px}.upload small{font-size:11px;color:#8b998e}.uploadicon{color:#3c7954;font-size:28px}.actions{display:flex;gap:8px;margin-top:13px}.actions>*{flex:1;font-size:11px;padding:9px 4px;text-align:center;color:#4a6952;text-decoration:none}.instructions{font-size:12px;color:#718278;padding-left:18px;line-height:1.9;margin-bottom:0}.privacy{font-size:11px;color:#67816c;line-height:1.7;margin:16px 0 0}.note{background:#edf2e9;border:1px solid #dae4d5;border-radius:14px;padding:21px}.note h2{font-size:14px}.note p{font-size:12px;color:#72816b;margin-bottom:0}.bottom{margin-top:22px;background:#fff;border:1px solid #e0e6df;border-radius:14px;padding:21px 25px;display:flex;gap:22px;align-items:start}.bottom h2{font-size:14px;white-space:nowrap;color:#497153;margin-top:4px}.bottom p{font-size:12px;color:#7e8d81;margin:0}.status{font-size:12px;line-height:1.7;border-radius:8px;margin:14px 0 0;overflow-wrap:anywhere}.status:empty{display:none}.status.error{padding:12px;background:#fff0ec;color:#a44730}.status.info{padding:12px;background:#edf5ec;color:#467049}footer{text-align:center;color:#95a095;font-size:11px;padding:28px 0 10px}.viewbuttons{display:flex;gap:5px}.viewbuttons button{font-size:12px;padding:7px 11px}.viewbuttons button[aria-pressed=true]{background:#e7eee7;border-color:#afc5b2;color:#286241}.mobile-view{max-width:470px}.mobile-view .intro{display:block}.mobile-view .tag{display:inline-block;margin-top:15px}.mobile-view .stats{grid-template-columns:1fr;gap:10px}.mobile-view .card{padding:17px 20px}.mobile-view .value{font-size:31px;margin-top:7px}.mobile-view .workspace{grid-template-columns:1fr}.mobile-view .bottom{display:block}.mobile-view .chartbox{height:320px}@media(max-width:760px){header{padding:16px}.topnote{display:none}.shell{padding:25px 16px}.intro{display:block}h1{font-size:27px}.tag{display:inline-block;margin-top:15px}.stats{gap:9px}.card{padding:16px 12px}.value{font-size:27px}.unit{font-size:11px;margin-left:3px}.label{font-size:11px}.card small{font-size:10px}.workspace{grid-template-columns:1fr}.panel{padding:18px}.chartbox{height:320px}.bottom{display:block;padding:20px}.bottom h2{margin-bottom:9px}}@media(max-width:390px){.stats{grid-template-columns:1fr}.card{padding:16px 20px}.card small{display:none}}
+</style>
+<script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.8/dist/chart.umd.min.js"></script>
+</head>
+<body>
+<header><div class="brand"><span>∿</span>Science Lab<span style="background:none;color:#93a093;font-size:11px;font-weight:500">탐구의 시작, 데이터에서</span></div><div class="viewbuttons" aria-label="화면 보기 전환"><button id="desktop" aria-pressed="true">PC 보기</button><button id="mobile" aria-pressed="false">모바일 보기</button></div></header>
+<main class="shell" id="shell">
+<div class="intro"><div><div class="eyebrow">SCIENCE EXPLORATION DASHBOARD</div><h1>데이터로 발견하는 우리 교실의 과학</h1><p class="sub">사이언스큐브로 측정한 CO₂와 온도, 변화 속에 숨은 이야기를 찾아보세요.</p></div><span class="tag">● &nbsp; 브라우저에서 안전하게 분석</span></div>
+<section class="stats" aria-label="통계 요약"><article class="card"><div class="label"><i class="accent"></i>최대 CO₂ 농도</div><div class="value"><span id="max">—</span><span class="unit">ppm</span></div><small>측정 구간의 가장 높은 농도</small></article><article class="card"><div class="label"><i class="accent"></i>평균 CO₂ 농도</div><div class="value"><span id="avg">—</span><span class="unit">ppm</span></div><small>전체 측정값의 산술평균</small></article><article class="card"><div class="label"><i class="accent orange"></i>평균 온도</div><div class="value"><span id="temp">—</span><span class="unit">℃</span></div><small>전체 측정값의 산술평균</small></article></section>
+<div class="workspace"><section class="panel"><div class="panelhead"><div><h2>시간에 따른 측정값 변화</h2><p class="hint">범례를 눌러 계열을 숨기거나, 그래프에서 측정값을 확인하세요.</p></div><span class="tag" id="source">예시 데이터</span></div><div class="chartbox"><canvas id="chart" role="img" aria-label="시간에 따른 CO₂ 농도와 온도 이중 Y축 그래프"></canvas></div><p id="chartError" class="status error" role="alert"></p><div class="meta"><span>파일 <strong id="filename"></strong></span><span>측정값 <strong id="count"></strong></span><span>측정 구간 <strong id="range"></strong></span></div></section>
+<aside class="side"><section class="panel"><h2>나의 측정 데이터</h2><p class="hint">CSV 파일을 불러와 탐구를 시작하세요.</p><label class="upload" id="drop"><input id="file" type="file" accept=".csv,text/csv" aria-label="측정 CSV 파일 선택"><span class="uploadicon">↥</span><b>CSV 파일 선택하기</b><small>또는 파일을 여기에 끌어 놓으세요</small></label><div class="actions"><button id="sampleDownload">예시 CSV 다운로드</button><button id="reset">예시로 돌아가기</button></div><p id="status" class="status" role="status" aria-live="polite"></p><ol class="instructions"><li>1열: 시간(s)</li><li>2열: CO₂ 농도(ppm)</li><li>3열: 온도(℃)</li></ol><p class="privacy">⌑ &nbsp;파일은 서버에 업로드되지 않습니다.<br>모든 데이터는 이 브라우저에서만 처리됩니다.</p></section><section class="note"><h2>✧ &nbsp;탐구를 위한 작은 질문</h2><p>CO₂ 농도가 높아질 때 온도도 함께 변하나요? 환기 전후의 변화와 측정 조건을 함께 기록해 보세요.</p></section></aside></div>
+<section class="bottom"><h2>그래프를 읽는 방법</h2><p>초록 선은 CO₂ 농도(왼쪽 축), 주황 선은 온도(오른쪽 축)입니다. 축의 단위와 눈금이 다르므로 선의 높이만으로 두 값을 비교하지 마세요. 불규칙한 측정 간격은 실제 시간에 맞춰 표시됩니다. 평균은 시간 가중평균이 아닌 측정값의 산술평균입니다.</p></section><footer>SCIENCE LAB &nbsp;·&nbsp; 관찰하고, 질문하고, 발견하세요.</footer>
+</main>
+<script>
+'use strict';
+const SAMPLE=`시간(s),CO₂(ppm),온도(℃)\n0,420,23.1\n10,438,23.2\n20,462,23.3\n35,510,23.5\n50,565,23.7\n60,612,23.8\n80,701,24.0\n100,780,24.3\n120,856,24.5\n140,910,24.7\n160,948,24.8\n180,972,25.0\n200,925,24.9\n220,810,24.6\n240,690,24.3\n255,610,24.0\n270,550,23.8\n285,497,23.6\n300,460,23.5\n`;
+const $=id=>document.getElementById(id);
+let chart=null,loadId=0;
+function csvRows(text){
+ const rows=[];let row=[],cell='',quoted=false,closed=false,line=1,start=1;
+ text=text.replace(/^\uFEFF/,'').replace(/\r\n?/g,'\n');
+ for(let i=0;i<=text.length;i++){
+  const c=i===text.length?'\n':text[i];
+  if(quoted){if(i===text.length)throw Error('따옴표가 닫히지 않았습니다. CSV 형식을 확인해 주세요.');if(c==='"'){if(text[i+1]==='"'){cell+='"';i++;}else{quoted=false;closed=true;}}else{cell+=c;if(c==='\n')line++;}continue;}
+  if(c==='"'&&!cell.trim()&&!closed){quoted=true;cell='';continue;}
+  if(c===','||c==='\n'){row.push(cell.trim());cell='';closed=false;if(c==='\n'){if(row.some(v=>v!==''))rows.push({cells:row,line:start});row=[];line++;start=line;}continue;}
+  if(closed&&!/\s/.test(c))throw Error(`${line}행의 따옴표 뒤에 잘못된 문자가 있습니다.`);
+  if(c==='"')throw Error(`${line}행의 따옴표 형식을 확인해 주세요.`);
+  cell+=c;
+ }
+ return rows;
+}
+function numeric(s){return /^[+-]?(?:\d+\.?\d*|\.\d+)(?:e[+-]?\d+)?$/i.test(s)&&Number.isFinite(Number(s));}
+function parseCSV(text){
+ const rows=csvRows(text);if(!rows.length)throw Error('파일이 비어 있습니다. 시간, CO₂, 온도 데이터를 넣어 주세요.');
+ // A header is recognized only when all three columns describe the expected measurements.
+ const h=rows[0].cells;const hasHeader=h.length===3&&/시간|time/i.test(h[0])&&/co[₂2]|이산화탄소/i.test(h[1])&&/온도|temp|℃|°c/i.test(h[2]);
+ const data=[],invalid=[];
+ for(const r of rows.slice(hasHeader?1:0)){
+  if(r.cells.length!==3||!r.cells.every(numeric)){invalid.push(r.line);continue;}
+  const [time,co2,temp]=r.cells.map(Number);if(time<0||co2<0){invalid.push(r.line);continue;}data.push({time,co2,temp});
+ }
+ if(!data.length)throw Error('유효한 측정값이 없습니다. 쉼표로 구분한 3열(시간, CO₂, 온도)과 숫자 형식을 확인해 주세요. 시간과 CO₂는 0 이상이어야 합니다.');
+ data.sort((a,b)=>a.time-b.time);return {data,invalid};
+}
+function summarize(data){let max=-Infinity,co2=0,temp=0;for(let i=0;i<data.length;i++){const p=data[i];max=Math.max(max,p.co2);co2+=(p.co2-co2)/(i+1);temp+=(p.temp-temp)/(i+1);}return {max,avg:co2,temp};}
+const fmt=(v,d=1)=>v.toLocaleString('ko-KR',{maximumFractionDigits:d});
+function render(result,name,sample){
+ const {data,invalid}=result,s=summarize(data);$('max').textContent=fmt(s.max);$('avg').textContent=fmt(s.avg);$('temp').textContent=fmt(s.temp);$('filename').textContent=name;$('count').textContent=`${fmt(data.length,0)}개`;$('range').textContent=`${fmt(data[0].time,3)}–${fmt(data[data.length-1].time,3)} s`;$('source').textContent=sample?'예시 데이터':'나의 데이터';
+ const status=$('status');status.className='status info';status.textContent=invalid.length?`${data.length}개를 불러왔습니다. 잘못된 ${invalid.length}개 행(${invalid.slice(0,8).join(', ')}${invalid.length>8?' 외':''}행)은 제외했습니다. 시간순으로 정렬했습니다.`:sample?'':`${data.length}개의 측정값을 불러왔습니다. 시간순으로 정렬했습니다.`;
+ if(typeof Chart==='undefined'){$('chartError').textContent='그래프 라이브러리를 불러오지 못했습니다. 인터넷 연결을 확인하고 새로고침해 주세요. 통계 계산과 CSV 불러오기는 사용할 수 있습니다.';return;}
+ if(chart)chart.destroy();
+ chart=new Chart($('chart'),{type:'line',data:{datasets:[{label:'CO₂ 농도 (ppm)',data:data.map(p=>({x:p.time,y:p.co2})),yAxisID:'co2',borderColor:'#39835b',backgroundColor:'#39835b',pointRadius:data.length>150?0:2,pointHoverRadius:5,borderWidth:2.5,tension:0},{label:'온도 (℃)',data:data.map(p=>({x:p.time,y:p.temp})),yAxisID:'temperature',borderColor:'#d69a55',backgroundColor:'#d69a55',pointRadius:data.length>150?0:2,pointHoverRadius:5,borderWidth:2.5,tension:0}]},options:{responsive:true,maintainAspectRatio:false,animation:false,interaction:{mode:'index',intersect:false},plugins:{legend:{position:'bottom',labels:{usePointStyle:true,boxWidth:7,padding:22,color:'#6b7b70',font:{size:11}}},tooltip:{callbacks:{title:items=>`시간: ${fmt(items[0].parsed.x,3)} s`,label:ctx=>`${ctx.dataset.label}: ${fmt(ctx.parsed.y,3)}`}}},scales:{x:{type:'linear',title:{display:true,text:'시간 (s)'},grid:{display:false},ticks:{maxTicksLimit:7},border:{display:false}},co2:{type:'linear',position:'left',title:{display:true,text:'CO₂ 농도 (ppm)'},grid:{color:'#edf1ec'},border:{display:false}},temperature:{type:'linear',position:'right',title:{display:true,text:'온도 (℃)'},grid:{drawOnChartArea:false},border:{display:false}}}}});
+}
+async function loadFile(file){const id=++loadId;if(!file)return;try{if(!/\.csv$/i.test(file.name))throw Error('CSV 파일(.csv)을 선택해 주세요.');if(file.size>10*1024*1024)throw Error('파일이 너무 큽니다. 10MB 이하 CSV 파일을 선택해 주세요.');const buffer=await file.arrayBuffer();const text=new TextDecoder('utf-8',{fatal:true}).decode(buffer);const result=parseCSV(text);if(id!==loadId)return;render(result,file.name,false);}catch(e){if(id!==loadId)return;$('status').className='status error';$('status').textContent=e instanceof TypeError?'UTF-8 형식으로 저장한 CSV 파일을 선택해 주세요.':e.message;}finally{if(id===loadId)$('file').value='';}}
+$('file').addEventListener('change',e=>loadFile(e.target.files[0]));
+for(const type of ['dragenter','dragover'])$('drop').addEventListener(type,e=>{e.preventDefault();$('drop').classList.add('drag');});
+for(const type of ['dragleave','drop'])$('drop').addEventListener(type,e=>{e.preventDefault();$('drop').classList.remove('drag');});
+$('drop').addEventListener('drop',e=>loadFile(e.dataTransfer.files[0]));
+$('reset').onclick=()=>{loadId++;$('file').value='';render(parseCSV(SAMPLE),'sample.csv',true);};
+$('sampleDownload').onclick=()=>{const url=URL.createObjectURL(new Blob(['\uFEFF'+SAMPLE],{type:'text/csv;charset=utf-8'}));const a=document.createElement('a');a.href=url;a.download='sample.csv';a.click();setTimeout(()=>URL.revokeObjectURL(url),1000);};
+for(const mode of ['desktop','mobile'])$(mode).onclick=()=>{$('shell').classList.toggle('mobile-view',mode==='mobile');$('desktop').setAttribute('aria-pressed',String(mode==='desktop'));$('mobile').setAttribute('aria-pressed',String(mode==='mobile'));if(chart)chart.resize();};
+render(parseCSV(SAMPLE),'sample.csv',true);
+</script>
+</body>
+</html>
